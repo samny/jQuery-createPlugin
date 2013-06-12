@@ -1,0 +1,26 @@
+{
+  "name": "jQuery-createPlugin",
+  "title": "jQuery Createplugin",
+  "description": "A helper for creating a jQuery plugin with callable methods given a name and construcor function",
+  "version": "0.1.0",
+  "homepage": "https://github.com/samny/jQuery-createPlugin",
+  "author": {
+    "name": "Samuel Nystedt",
+    "email": "samuel.nystedt@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/samny/jQuery-createPlugin.git"
+  },
+  "bugs": "https://github.com/samny/jQuery-createPlugin/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/samny/jQuery-createPlugin/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
