@@ -13,7 +13,7 @@
         createPlugin: function(pluginName, Plugin) {
 
             // Check so that a plugin name is defined along with an object definition for it's prototype
-            if (typeof pluginName === s && typeof Plugin.init === f) {
+            if (typeof pluginName === s && (typeof Plugin === f || typeof Plugin.init === f)) {
 
                 // create jQuery plugin
                 $.fn[pluginName] = function(options, args) {
@@ -41,7 +41,12 @@
 
                                 // if there is no previous instance, create a fresh one and save it in the elements data.
                                 if (!instance) {
-                                    instance = Object.create(Plugin).init(this, options);
+                                    if (typeof Plugin === f) {
+                                        instance = new Plugin(this, options);
+                                    } else if (typeof Object.create === f) {
+                                        instance = Object.create(Plugin).init(this, options);
+                                    }
+
                                     instance.NAME = pluginName;
                                     $.data(this, pluginName, instance);
                                 }
